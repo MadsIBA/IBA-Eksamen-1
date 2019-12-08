@@ -1,51 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    font-family: 'Nunito', sans-serif;
+    height: 100vh;
+}
+
 body {
     background-color: black;
-    color: azure;
+    color: white;
     height: 100%;
 }
 
-#bodyBox {
-    height: 100vmax;
+div {
+    width: 100%;
+    text-align: center;
 }
 
 h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    letter-spacing: 10px;
 }
 
-.btn-help {
-    background-color: rgb(255, 0, 85);
-    border: none;
-    border-radius: 12px;
-    
-    position: absolute;
-    top: 80%;
+#item-1 {
+    padding: 25vh 0px 0px 0px;
+}
+#item-2 {
+    padding: 50px 0px 0px 0px;
+}
+#item-3 {
+    padding: 400px 0px 0px 0px;
+}
+#item-4 {
+    padding: 100px 0px 0px 0px;
+}
+#circle-1 {
+    position: fixed;
     left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 15px 32px;
+    top: 40%;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    border-radius: 50%;
+    background-color: #1b1b1b;
+  }
+#circle-2 {
+    position: fixed;
+    left: 50%;
+    top: 40%;
+    width: 100px;
+    height: 100px;
+    margin-left: -50px;
+    border-radius: 50%;
+    background-color: #1b1b1b;
+    animation-name: example;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+  }
 
+  @keyframes example {
+    0%   {background-color:#1b1b1b; opacity: 1;}
+    100% {transform: scale(3); opacity: 0;}
+  }
+/*
+  Har ændrede knappen til at hedde #button istedet. 
+*/
+#button {
+    background-color: rgb(0, 0, 0);
+    border: solid 3px white;
+    padding: 15px 50px;
     color: white;
-    
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     font-size: 16px;
+    font-weight: 400;
     cursor: pointer;
-    
+    transition: border 0.7s ease-out, color 0.7s ease-out;
+}
+/*
+  Har tilføjet en simpel transition animation. Når du hover over knappen
+  ændrer farven sig til at være red-pink.    
+*/
+#button:hover {
+    border: 3px solid rgb(255, 0, 85);
+    color: rgb(255, 0, 85);
+    cursor: pointer;
 }
 
 img {
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    width: 250px;
-    transform: translate(-50%, -50%);
+    width: 200px;
 }
