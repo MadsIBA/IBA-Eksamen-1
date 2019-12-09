@@ -70,7 +70,7 @@ h1 {
     100% {transform: scale(3); opacity: 0;}
   }
 /*
-  Har ændrede knappen til at hedde #button istedet. 
+  Har ændrede knappen til at hedde #button istedet.
 */
 #button {
     background-color: rgb(0, 0, 0);
@@ -87,7 +87,7 @@ h1 {
 }
 /*
   Har tilføjet en simpel transition animation. Når du hover over knappen
-  ændrer farven sig til at være red-pink.    
+  ændrer farven sig til at være red-pink.
 */
 #button:hover {
     border: 3px solid rgb(255, 0, 85);
