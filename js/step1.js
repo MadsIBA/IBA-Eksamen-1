@@ -134,17 +134,17 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                                                        
                             newStep2 += '<center><h2>';
                             newStep2 += 'STEP 2'
-                            newStep2 += '</h2>';
+                            newStep2 += '</h2><br>';
                             newStep2 += '<h3>'
                             newStep2 += 'Vælg en tid i minutter'
-                            newStep2 += '</h3></center>'
+                            newStep2 += '</h3></center><br><br>'
 
                             document.getElementById('step2').innerHTML = newStep2;
 
                             var newBtnsTime ='';
                             for (var i = 5; i < maxRunTime + 1; i++) {
                                 newBtnsTime += '<button class="tid" id="' + i + '">';
-                                newBtnsTime += '--' + i + '--';
+                                newBtnsTime += '<p>' + i + '</p>';
                                 newBtnsTime += '</button>';
                             };
                                           
@@ -168,12 +168,18 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                             // Loop through the buttons and add the active class to the current/clicked button
                             for (var i = 0; i < btns.length; i++) {
                                 btns[i].addEventListener("click", function () {
-                                    var current = document.getElementsByClassName("active");
+                                    // Checks inside a specific div of the code (PREVENT CABINS BUTTONS ACTIVE to be replaced later)
+                                    // var current = document.getElementsByClassName("active"); Original Line
+                                    var nestedBtnTid = document.getElementsByClassName("nested-btn-tid")[0];
+                                    var current = nestedBtnTid.getElementsByClassName("active");
+
+        
+                                    console.log(current);
 
                                     // If there's no active class
                                     if (current.length > 0) {
                                         current[0].className = current[0].className.replace(
-                                            " active",
+                                            "active",
                                             "");
                                     }
 
@@ -183,7 +189,7 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
 
                                     // Logs the ID of the button with the active class [USE THIS FOR FULL PRICE]
                                     valgtTid.pop();
-                                    valgtTid.push(parseInt(document.getElementsByClassName(
+                                    valgtTid.push(parseInt(nestedBtnTid.getElementsByClassName(
                                         "active")[0].id));
 
                                     var valgtTidStr = valgtTid.toString();;

@@ -173,6 +173,10 @@ body {
     cursor: pointer;
 }
 
+.tid {
+    font-size: large;
+}
+
 .totalPris{
     position: relative;
     left: 50%;
