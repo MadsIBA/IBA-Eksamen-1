@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(10, 10, 10);
+    color: azure;
+    height: 100%;
+    
+}
+
+/******************
+ * GRID CONTROL
+ */
+#grid {
+    display: none;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    
+    position: relative;
+    
+    left: 50%;
+    height: 500px;
+    transform: translate(-50%, 50%);
+    
+}
+
+.grid-container>div {
+/*    background-color: gray; */
+    padding: 1em;
+}
+
+/******************
+* KABINER
+*/
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+}
+
+.content > button{
+    position: relative;
+    padding: 2em;
+    
+    background-color: rgb(255, 0, 85);
+        
+    border-radius: 15px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.content > button:focus{
+    position: relative;
+    padding: 2em;
+    
+    background-color: rgb(87, 0, 29);
+    
+    border-radius: 15px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.content > .active{
+    position: relative;
+    padding: 2em;
+    
+    background-color: rgb(87, 0, 29);
+    
+    border-radius: 15px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/******************
+ * BUTTONS
+ */
+.time-btn{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;  
+    position: relative;
+    left: 50%;
+    max-width: auto;
+    transform: translate(-50%, 0%);
+}
+
+.nested-btn-tid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;     
+}
+
+.nested-btn-tid>button {
+    position: relative;
+    left: 50%;
+    height: 100px;
+    width: 100px;
+    transform: translate(-50%, 0%);
+    border-radius: 5px;
+
+    background-color: rgb(0, 0, 0);
+
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nested-btn-tid>button:focus {
+    position: relative;
+    left: 50%;
+    height: 100px;
+    width: 100px;
+    transform: translate(-50%, 0%);
+    border-radius: 5px;
+
+    background-color: rgb(0, 119, 255);
+
+    color: white;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nested-btn-tid>.active {
+    position: relative;
+    left: 50%;
+    height: 100px;
+    width: 100px;
+    transform: translate(-50%, 0%);
+    border-radius: 5px;
+
+    background-color: rgb(0, 119, 255);
+
+    color: white;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.totalPris{
+    position: relative;
+    left: 50%;
+    height: auto;
+    width: 400px;
+    transform: translate(-50%, 0%);
+    border-color: rgb(200, 200, 200);
+    border-radius: 5px;
+    padding: 15px 15px;
+
+    background-color: rgb(107, 107, 107);
+
+    color: rgb(0, 0, 0);
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+.menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    padding: 15px 32px;
+}
+
+.menu > button {
+    position: relative;
+    left: 50%;
+    height: 50px;
+    width: 250px;
+    transform: translate(-50%, 0%);
+    border-radius: 5px;   
+
+    color: rgb(0, 0, 0);
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}

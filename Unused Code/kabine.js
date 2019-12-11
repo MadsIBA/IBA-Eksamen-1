@@ -1,4 +1,7 @@
+// MOVE THIS TO REFERENCE CODE
+
 var valgtTid = [];
+
 
 /*****************
  * PRIS FOR KABINE
@@ -44,9 +47,6 @@ var btnContainerTid = document.getElementById("btn-tid");
 var btns = btnContainerTid.getElementsByClassName("tid");
 
 // Loop through the buttons and add the active class to the current/clicked button
-
-
-
 for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function () {
         var current = document.getElementsByClassName("active");
@@ -87,19 +87,21 @@ for (var i = 0; i < btns.length; i++) {
         /*****************
          * FULL PRICE
          */
+        
+
         for (var i = 1; i < 4; i++) {
             if (!document.getElementById("kabine" + i)) {
-
+               
                 // CREATE BUTTON
                 var kabineElem = document.createElement("button");
                 kabineElem.className = "kabine"
                 kabineElem.id = "kabine" + i
                 kabineElem.onclick = function () {
-                    loadStep1();
+                    loadStep1();                   
                     cabin1.calcPrice(); //FIX THIS PART Cabin + i?
                     cabin2.calcPrice(); //
                     cabin3.calcPrice(); //
-                    return false;            
+                    return false;
                 };
 
                 // CREATE <H3></H3>
@@ -108,6 +110,8 @@ for (var i = 0; i < btns.length; i++) {
 
                 // CREATE <P></P
                 var kabinePris = document.createElement("p")
+                kabinePris.id = "kabineP" + i
+                
                 if (i === 1) {
                     kabinePris.innerHTML = "<br> Pris 5kr/min " + cabin1.calcPrice() //FIX THIS PART - Pris skriver undefinded
                 } else if (i === 2) {
@@ -132,7 +136,7 @@ for (var i = 0; i < btns.length; i++) {
                     cabin1.calcPrice(); //FIX THIS PART Cabin + i?
                     cabin2.calcPrice(); //
                     cabin3.calcPrice(); //
-                    return false;                   
+                    return false;
                 };
 
                 // CREATE <H3></H3>
@@ -141,6 +145,8 @@ for (var i = 0; i < btns.length; i++) {
 
                 // CREATE <P></P>
                 var kabinePris = document.createElement("p")
+                kabinePris.id = "kabineP" + i
+
                 if (i === 1) {
                     kabinePris.innerHTML = "<br> Pris 5kr/min " + cabin1.calcPrice() //FIX THIS PART - Pris skriver undefinded
                 } else if (i === 2) {
@@ -168,16 +174,16 @@ function loadStep1() {
     if (!document.getElementById("btn-next")) {
         var btn = document.createElement("button");
         btn.id = "btn-next";
-        btn.innerHTML = "Next";
+        btn.innerHTML = "<a href='http://youtube.com'>Youtube</a>"; //REPLACE LINK
         document.body.appendChild(btn);
-    // Else remove ELEMENT
+        // Else remove ELEMENT
     } else {
         var elem = document.getElementById("btn-next");
         elem.remove();
-    // And create it again
+        // And create it again
         var btn = document.createElement("button");
         btn.id = "btn-next";
-        btn.innerHTML = "Next";
+        btn.innerHTML = "<a href='http://youtube.com'>Youtube</a>"; //REPLACE LINK
         document.body.appendChild(btn);
     }
 };

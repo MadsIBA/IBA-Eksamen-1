@@ -1,6 +1,6 @@
 //ONCLICK på start.html
 function loadMenu() {
-    window.location.href = "kabine.html";
+    window.location.href = "step1.html";
 }
 
 //HJÆLPE KNAP
