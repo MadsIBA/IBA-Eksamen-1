@@ -148,11 +148,16 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                             document.getElementById('step2').innerHTML = newStep2;
 
                             var newBtnsTime ='';
-                            for (var i = 5; i < maxRunTime + 1; i++) {
+                            for (var i = 5; i < maxRunTime; i += 5) {
                                 newBtnsTime += '<button class="tid" id="' + i + '">';
                                 newBtnsTime += '<p>' + i + '</p>';
                                 newBtnsTime += '</button>';
                             };
+                            
+                            //Creates max time button
+                            newBtnsTime += '<button class="tid" id=' + maxRunTime +'">'
+                            newBtnsTime += '<p>' + maxRunTime + '</p>';
+                            newBtnsTime += '</button>';
                                           
                             // Update the page with the new content
                             document.getElementById('btn-tid').innerHTML = newBtnsTime;

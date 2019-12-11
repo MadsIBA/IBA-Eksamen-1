@@ -6,5 +6,5 @@ function loadMenu() {
 //HJÆLPE KNAP
 function loadHelp() {
     //Lav en popup med hjælpevideo
-    window.location.href = "https://google.com";
+    alert("Spørg en voksen!")
 }

@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(10, 10, 10);
+    color: azure;
+    
+    
+}
+
+/******************
+ * GRID CONTROL
+ */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 100vh;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    align-items: center;
+}
+
+.grid-container>div {
+/*    background-color: gray; */
+    padding: 1em;
+}
+
+.payment {
+    display: grid;
+    grid-template-columns: auto;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    justify-items: center;
+    padding-bottom: 50px;
+    
+}
+
+.paymentOption>button {
+    position: relative;
+    
+    width: 500px;
+    height: 250px;
+    
+    
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(255, 0, 85);
+}
+
+.paymentOption>button>i {
+    font-size: 150px;
+    color: azure;
+}
+
+.paymentOption>button>img {
+width: 250px;
+width: 250px;
+}
+
+
+.menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    padding: 15px 32px;
+}
+
+.menu > button {
+    position: relative;
+    
+    height: 50px;
+    width: 250px;
+    
+    border-radius: 5px;   
+
+    color: rgb(0, 0, 0);
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
