@@ -51,8 +51,7 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                  
                     // Update the page with the new content
                     document.getElementById('content1').innerHTML = newContent;
-
-
+                    
                     // DISABLE INUSE CABIN
                     for (var i = 0; i < cabinsTotal; i++) {
                         var cabins = data.Booths[i];
@@ -66,6 +65,8 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                         }
                     }
 
+                    
+                                                    
 
                     /*****************
                      * SETS THE CHOSEN CABIN BUTTON TO "ACTIVE" (FOR CSS STYLING)
@@ -116,6 +117,11 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
 
                             var maxRunTime = data.Booths[idKabine].MaxRunTime;
 
+                            // DISBALE BETALING BUTTON IN CASE USER CHANGES OPINION
+                            document.getElementById('menuPay').setAttribute('disabled', 'disabled');
+                            document.getElementById('menuPay').style.backgroundColor = "#" + (107).toString(16) + (107).toString(16) + (107).toString(16);
+                            document.getElementById('menuPay').style.cursor = "not-allowed";
+
                             // CREATE STEP 2
                             var newStep2 = '';
                                                        
@@ -134,10 +140,7 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                                 newBtnsTime += '--' + i + '--';
                                 newBtnsTime += '</button>';
                             };
-                            
-                            // WAITS FOR CABIN BUTTONS TO LOAD TO LOAD EVERYTHING ELSE (MAKE A LOADINGSCREEN IN THE BACKGROUND?)
-                            // document.getElementById('grid').style.display = "grid";
-                 
+                                          
                             // Update the page with the new content
                             document.getElementById('btn-tid').innerHTML = newBtnsTime;
 
@@ -179,23 +182,23 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                                     var valgtTidStr = valgtTid.toString();;
                                     var idTime = parseInt(valgtTidStr);
 
-                                    console.log(idTime);
+                                    console.log("valgt tid " + idTime);
 
                                     var totalPris = '';
                                     totalPris += '<center><h1><b>Pris: ' + cabins * idTime +
                                         ' DKK</b></h1></center>';
                                     document.getElementById("totalPrisId").innerHTML = totalPris;
+                                    
+                                    
+                                    // ENABLE BETALING BUTTON
+                                    document.getElementById('menuPay').removeAttribute('disabled');
+                                    document.getElementById('menuPay').style.backgroundColor = "#" + (221).toString(16) + (221).toString(16) + (221).toString(16);
+                                    document.getElementById('menuPay').style.cursor = "pointer";
+                                    
+                                  
                                 })
                             }
                         })
                     }
-
-
-
-
-
-
-
-
                 })
                 .catch(error => console.log(error));
