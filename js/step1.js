@@ -65,6 +65,12 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                         }
                     }
 
+                    // DISBALE BETALING BUTTON
+                    document.getElementById('menuPay').setAttribute('disabled', 'disabled');
+                    document.getElementById('menuPay').style.backgroundColor = "#" + (107).toString(16) + (107).toString(16) + (107).toString(16);
+                    document.getElementById('menuPay').style.border = "none";
+                    document.getElementById('menuPay').style.cursor = "not-allowed";
+
                     
                                                     
 
@@ -120,6 +126,7 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                             // DISBALE BETALING BUTTON IN CASE USER CHANGES OPINION
                             document.getElementById('menuPay').setAttribute('disabled', 'disabled');
                             document.getElementById('menuPay').style.backgroundColor = "#" + (107).toString(16) + (107).toString(16) + (107).toString(16);
+                            document.getElementById('menuPay').style.border = "none";
                             document.getElementById('menuPay').style.cursor = "not-allowed";
 
                             // CREATE STEP 2
@@ -193,6 +200,7 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                                     // ENABLE BETALING BUTTON
                                     document.getElementById('menuPay').removeAttribute('disabled');
                                     document.getElementById('menuPay').style.backgroundColor = "#" + (221).toString(16) + (221).toString(16) + (221).toString(16);
+                                    document.getElementById('menuPay').style.border = "";
                                     document.getElementById('menuPay').style.cursor = "pointer";
                                     
                                   
