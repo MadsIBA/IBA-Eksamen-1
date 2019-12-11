@@ -65,7 +65,8 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                         }
                     }
 
-                    // DISBALE BETALING BUTTON
+
+                    // DISABLE BETALING BUTTON
                     document.getElementById('menuPay').setAttribute('disabled', 'disabled');
                     document.getElementById('menuPay').style.backgroundColor = "#" + (107).toString(16) + (107).toString(16) + (107).toString(16);
                     document.getElementById('menuPay').style.border = "none";
@@ -123,11 +124,16 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
 
                             var maxRunTime = data.Booths[idKabine].MaxRunTime;
 
-                            // DISBALE BETALING BUTTON IN CASE USER CHANGES OPINION
+                            // DISABLE BETALING BUTTON IN CASE USER CHANGES OPINION
                             document.getElementById('menuPay').setAttribute('disabled', 'disabled');
                             document.getElementById('menuPay').style.backgroundColor = "#" + (107).toString(16) + (107).toString(16) + (107).toString(16);
                             document.getElementById('menuPay').style.border = "none";
                             document.getElementById('menuPay').style.cursor = "not-allowed";
+
+                            // RESET PRICE IN CASE USER CHANGES OPINION
+                            var totalPris = '';
+                            totalPris += '<center><h1><b>Pris: 0 DKK</b></h1></center>';
+                            document.getElementById("totalPrisId").innerHTML = totalPris;
 
                             // CREATE STEP 2
                             var newStep2 = '';
