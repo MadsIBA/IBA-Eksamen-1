@@ -42,7 +42,7 @@ body {
 */
 .content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat( 2, minmax(480px, 1fr));
     grid-column-gap: 1em;
     grid-row-gap: 1em;
 }
@@ -50,6 +50,8 @@ body {
 .content > button{
     position: relative;
     padding: 2em;
+    left: 50%;
+    transform: translate(-50%, 0%);
     
     background-color: rgb(255, 0, 85);
         
@@ -65,7 +67,9 @@ body {
 .content > button:focus{
     position: relative;
     padding: 2em;
-    
+    left: 50%;
+    transform: translate(-50%, 0%);
+        
     background-color: rgb(87, 0, 29);
     
     border-radius: 15px;
@@ -80,7 +84,9 @@ body {
 .content > .active{
     position: relative;
     padding: 2em;
-    
+    left: 50%;
+    transform: translate(-50%, 0%);
+        
     background-color: rgb(87, 0, 29);
     
     border-radius: 15px;
@@ -101,6 +107,7 @@ body {
     grid-column-gap: 1em;
     grid-row-gap: 1em;  
     position: relative;
+    height: 550px;
     left: 50%;
     max-width: auto;
     transform: translate(-50%, 0%);
@@ -108,18 +115,21 @@ body {
 
 .nested-btn-tid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(10, 1fr);
     grid-column-gap: 1em;
-    grid-row-gap: 1em;     
+    grid-row-gap: 1em;
+    grid-auto-rows: minmax(80px, 80px);
+    height: 550px;
 }
 
 .nested-btn-tid>button {
     position: relative;
     left: 50%;
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     transform: translate(-50%, 0%);
     border-radius: 5px;
+    
 
     background-color: rgb(0, 0, 0);
 
@@ -132,8 +142,8 @@ body {
 .nested-btn-tid>button:focus {
     position: relative;
     left: 50%;
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     transform: translate(-50%, 0%);
     border-radius: 5px;
 
@@ -149,8 +159,8 @@ body {
 .nested-btn-tid>.active {
     position: relative;
     left: 50%;
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     transform: translate(-50%, 0%);
     border-radius: 5px;
 
