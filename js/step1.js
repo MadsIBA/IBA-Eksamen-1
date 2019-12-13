@@ -1,5 +1,5 @@
 attachEvent(window,'load',function(){
-    var idleSeconds = 10;
+    var idleSeconds = 600;
     var idleTimer;
     function resetTimer(){
       clearTimeout(idleTimer);
@@ -11,7 +11,7 @@ attachEvent(window,'load',function(){
   
     resetTimer(); // Start the timer when the page loads
   });
-  
+
   function whenUserIdle(){
     window.location.href = "start.html";
     }
@@ -24,6 +24,129 @@ attachEvent(window,'load',function(){
       return obj.attachEvent("on"+evt,fnc);
     }
   } 
+
+// STEPS ANIMATION (NOT COMPLETE)
+$('.accordion-panel:eq(0)')
+.slideDown(0);
+$('.accordion-panel:eq(0)')
+.slideUp(500); 
+$('.accordion-panel:eq(0)')
+.slideDown(); 
+$('.grid-container:eq(0)').hide().fadeIn(3000);
+/*$
+$('.accordion').on('click', '.accordion-control', function (e) { // When clicked
+    e.preventDefault(); // Prevent default action of button
+    $(this) // Get the element the user clicked on
+        .next('.accordion-panel') // Select following panel 
+        .not(':animated') // If it is not currently animating
+        .slideToggle(); // Use slide toggle to show or hide it
+});*/
+
+// #kabineTid (COMPLETE)
+$('.menu').on('click', '#kabineTid', function(){                     
+    $('.accordion-panel:eq(0)')         // Get Step 1
+    .delay(500);                        // Delay Animation
+    $('.accordion-panel:eq(0)')         // Get Step 1
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideDown();                          
+
+    $('.accordion-panel:eq(1)')         // Get Step 2
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                          
+        
+    $('.accordion-panel:eq(2)')         // Get Step 3
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                       
+
+    $('.accordion-panel:eq(3)')         // Get Step 4
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                         
+});
+
+// #vare KNAP (COMPLETE)
+$('.menu').on('click', '#vare', function(){                     
+    $('.accordion-panel:eq(0)')         // Get Step 1
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                          
+
+    $('.accordion-panel:eq(1)')         // Get Step 2
+    .delay(500);                        // Delay Animation
+    $('.accordion-panel:eq(1)')         // Get Step 2
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideDown();                          
+
+    $('.accordion-panel:eq(2)')         // Get Step 3
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                          
+    
+    $('.accordion-panel:eq(3)')         // Get Step 4
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                        
+});
+
+// #menuPay (COMPLETE)
+$('.menu').on('click', '#menuPay', function(){                     
+    $('.accordion-panel:eq(0)')         // Get Step 1
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                          
+
+    $('.accordion-panel:eq(1)')         // Get Step 2
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                          
+        
+    $('.accordion-panel:eq(2)')         // Get Step 3
+    .delay(500);                        // Delay Animation
+    $('.accordion-panel:eq(2)')         // Get Step 3
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideDown();                       
+
+    $('.accordion-panel:eq(3)')         // Get Step 4
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                         
+});
+
+// #menuPay2 (COMPLETE)
+$('.menu').on('click', '#menuPay2', function(){                     
+    $('.accordion-panel:eq(0)')         // Get Step 1
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                          
+
+    $('.accordion-panel:eq(1)')         // Get Step 2
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                          
+        
+    $('.accordion-panel:eq(2)')         // Get Step 3
+    .delay(500);                        // Delay Animation
+    $('.accordion-panel:eq(2)')         // Get Step 3
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideDown();                       
+
+    $('.accordion-panel:eq(3)')         // Get Step 4
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                         
+});
+
+// #confirmOrder (MISSING)
+$('.menu').on('click', '#confirmOrder', function(){                     
+    $('.accordion-panel:eq(0)')         // Get Step 1
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                          
+
+    $('.accordion-panel:eq(1)')         // Get Step 2
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                          
+        
+    $('.accordion-panel:eq(2)')         // Get Step 3
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                       
+
+    $('.accordion-panel:eq(2)')         // Get Step 4
+    .delay(500);                        // Delay Animation
+    $('.accordion-panel:eq(3)')         // Get Step 4
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideDown();                         
+});
+
 
 
 fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
@@ -100,7 +223,13 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                     document.getElementById('menuPay').style.border = "none";
                     document.getElementById('menuPay').style.cursor = "not-allowed";
 
+                    document.getElementById('menuPay2').setAttribute('disabled', 'disabled');
+                    document.getElementById('menuPay2').style.backgroundColor = "#" + (107).toString(16) + (107).toString(16) + (107).toString(16);
+                    document.getElementById('menuPay2').style.border = "none";
+                    document.getElementById('menuPay2').style.cursor = "not-allowed";
                     
+                    $("#totalPrisId").css("background-color", "rgb(107, 107, 107)");
+                    $("#totalPris2Id").css("background-color", "rgb(107, 107, 107)"); 
                                                     
 
                     /*****************
@@ -158,22 +287,30 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                             document.getElementById('menuPay').style.border = "none";
                             document.getElementById('menuPay').style.cursor = "not-allowed";
 
+                            document.getElementById('menuPay2').setAttribute('disabled', 'disabled');
+                            document.getElementById('menuPay2').style.backgroundColor = "#" + (107).toString(16) + (107).toString(16) + (107).toString(16);
+                            document.getElementById('menuPay2').style.border = "none";
+                            document.getElementById('menuPay2').style.cursor = "not-allowed";
+                            
+
+                            $("#totalPrisId").css("background-color", "rgb(107, 107, 107)");
+                            $("#totalPris2Id").css("background-color", "rgb(107, 107, 107)"); 
+
                             // RESET PRICE IN CASE USER CHANGES OPINION
                             var totalPris = '';
                             totalPris += '<center><h1><b>Pris: 0 DKK</b></h1></center>';
                             document.getElementById("totalPrisId").innerHTML = totalPris;
 
-                            // CREATE STEP 2
-                            var newStep2 = '';
+                            // CREATE STEP1BUTTONS
+                            var newStep1BtnH2 = '';
                                                        
-                            newStep2 += '<center><h2>';
-                            newStep2 += 'STEP 2'
-                            newStep2 += '</h2><br>';
-                            newStep2 += '<h3>'
-                            newStep2 += 'Vælg en tid i minutter'
-                            newStep2 += '</h3></center><br><br>'
+                            newStep1BtnH2 += '<center>';
+                            newStep1BtnH2 += '<br>';
+                            newStep1BtnH2 += '<h2>'
+                            newStep1BtnH2 += 'VÆLG EN TID (MINUTTER)'
+                            newStep1BtnH2 += '</h2></center><br><br>'
 
-                            document.getElementById('step2').innerHTML = newStep2;
+                            document.getElementById('step1BtnH2').innerHTML = newStep1BtnH2;
 
                             var newBtnsTime ='';
                             for (var i = 5; i < maxRunTime; i += 5) {
@@ -240,13 +377,28 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                                     totalPris += '<center><h1><b>Pris: ' + cabins * idTime +
                                         ' DKK</b></h1></center>';
                                     document.getElementById("totalPrisId").innerHTML = totalPris;
+                                    document.getElementById("totalPris2Id").innerHTML = totalPris;
                                     
+                                    /****************************
+                                     * USE THIS FOR FINAL PRICE
+                                    var finalPris = cabins * idTime;
+                                    document.getElementById("finalPrisId").innerHTML = finalPris;
+                                    console.log(finalPris);
+                                     */
                                     
                                     // ENABLE BETALING BUTTON
                                     document.getElementById('menuPay').removeAttribute('disabled');
                                     document.getElementById('menuPay').style.backgroundColor = "#" + (221).toString(16) + (221).toString(16) + (221).toString(16);
                                     document.getElementById('menuPay').style.border = "";
                                     document.getElementById('menuPay').style.cursor = "pointer";
+
+                                    document.getElementById('menuPay2').removeAttribute('disabled');
+                                    document.getElementById('menuPay2').style.backgroundColor = "#" + (221).toString(16) + (221).toString(16) + (221).toString(16);
+                                    document.getElementById('menuPay2').style.border = "";
+                                    document.getElementById('menuPay2').style.cursor = "pointer";
+
+                                    $("#totalPrisId").css("background-color", "green");
+                                    $("#totalPris2Id").css("background-color", "green"); 
                                     
                                   
                                 })
@@ -254,4 +406,41 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                         })
                     }
                 })
-                .catch(error => console.log(error));
+                .catch(error => {
+                    $('.accordion:eq(0)')         // Get All code from accordion class
+                    .not(':animated')             // If it is not currently animating                                   
+                    .hide();                       
+                    document.getElementById("errorMessage").innerHTML = "<center><h1>Der er sket en fejl, prøv igen!</h1><br><br><h3>Er det anden gang du ser denne besked,<br>kontakt da venligst support på nummer: <b>70 70 40 40</b></h3></h1></center><br><p>Error message: " + error + "</p>"; 
+                    
+                    (function(){
+                        var idleSeconds = 15;
+                        var idleTimer;
+                        function resetTimer(){
+                          clearTimeout(idleTimer);
+                          idleTimer = setTimeout(whenUserIdle,idleSeconds*1000);
+                        }
+                        attachEvent(document.body,'mousemove',resetTimer);
+                        attachEvent(document.body,'keydown',resetTimer);
+                        attachEvent(document.body,'click',resetTimer);
+                      
+                        resetTimer(); // Start the timer when the page loads
+                      })();
+                    
+                      function whenUserIdle(){
+                        window.location.href = "start.html";
+                        }
+                      
+                      function attachEvent(obj,evt,fnc,useCapture){
+                        if (obj.addEventListener){
+                          obj.addEventListener(evt,fnc,!!useCapture);
+                          return true;
+                        } else if (obj.attachEvent){
+                          return obj.attachEvent("on"+evt,fnc);
+                        }
+                      } 
+                      console.log(error);
+                }); 
+                
+                    
+                    
+                    
