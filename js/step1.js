@@ -1,5 +1,5 @@
 attachEvent(window,'load',function(){
-    var idleSeconds = 600;
+    var idleSeconds = 300;
     var idleTimer;
     function resetTimer(){
       clearTimeout(idleTimer);
@@ -43,12 +43,12 @@ $('.accordion').on('click', '.accordion-control', function (e) { // When clicked
 });*/
 
 // #kabineTid (COMPLETE)
-$('.menu').on('click', '#kabineTid', function(){                     
+$('.menu').on('click','#kabineTid, #orderNo', function(){                     
     $('.accordion-panel:eq(0)')         // Get Step 1
     .delay(500);                        // Delay Animation
     $('.accordion-panel:eq(0)')         // Get Step 1
     .not(':animated')                   // If it is not currently animating                                   
-    .slideDown();                          
+    .slideDown(1000);                          
 
     $('.accordion-panel:eq(1)')         // Get Step 2
     .not(':animated')                   // If it is not currently animating                                   
@@ -73,7 +73,7 @@ $('.menu').on('click', '#vare', function(){
     .delay(500);                        // Delay Animation
     $('.accordion-panel:eq(1)')         // Get Step 2
     .not(':animated')                   // If it is not currently animating                                   
-    .slideDown();                          
+    .slideDown(1000);                          
 
     $('.accordion-panel:eq(2)')         // Get Step 3
     .not(':animated')                   // If it is not currently animating                                   
@@ -84,49 +84,7 @@ $('.menu').on('click', '#vare', function(){
     .slideUp();                        
 });
 
-// #menuPay (COMPLETE)
-$('.menu').on('click', '#menuPay', function(){                     
-    $('.accordion-panel:eq(0)')         // Get Step 1
-    .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                          
-
-    $('.accordion-panel:eq(1)')         // Get Step 2
-    .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                          
-        
-    $('.accordion-panel:eq(2)')         // Get Step 3
-    .delay(500);                        // Delay Animation
-    $('.accordion-panel:eq(2)')         // Get Step 3
-    .not(':animated')                   // If it is not currently animating                                   
-    .slideDown();                       
-
-    $('.accordion-panel:eq(3)')         // Get Step 4
-    .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                         
-});
-
-// #menuPay2 (COMPLETE)
-$('.menu').on('click', '#menuPay2', function(){                     
-    $('.accordion-panel:eq(0)')         // Get Step 1
-    .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                          
-
-    $('.accordion-panel:eq(1)')         // Get Step 2
-    .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                          
-        
-    $('.accordion-panel:eq(2)')         // Get Step 3
-    .delay(500);                        // Delay Animation
-    $('.accordion-panel:eq(2)')         // Get Step 3
-    .not(':animated')                   // If it is not currently animating                                   
-    .slideDown();                       
-
-    $('.accordion-panel:eq(3)')         // Get Step 4
-    .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                         
-});
-
-// #confirmOrder (MISSING)
+// #confirmOrder (COMPLETE)
 $('.menu').on('click', '#confirmOrder', function(){                     
     $('.accordion-panel:eq(0)')         // Get Step 1
     .not(':animated')                   // If it is not currently animating                                   
@@ -135,17 +93,61 @@ $('.menu').on('click', '#confirmOrder', function(){
     $('.accordion-panel:eq(1)')         // Get Step 2
     .not(':animated')                   // If it is not currently animating                                   
     .slideUp();                          
-        
+
+    $('.accordion-panel:eq(2)')         // Get Step 3
+    .delay(500);                        // Delay Animation
     $('.accordion-panel:eq(2)')         // Get Step 3
     .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                       
+    .slideDown(1000);                       
 
-    $('.accordion-panel:eq(2)')         // Get Step 4
-    .delay(500);                        // Delay Animation
     $('.accordion-panel:eq(3)')         // Get Step 4
     .not(':animated')                   // If it is not currently animating                                   
-    .slideDown();                         
+    .slideUp();                         
 });
+
+// #confirmOrder2 (COMPLETE)
+$('.menu').on('click', '#confirmOrder2', function(){                     
+    $('.accordion-panel:eq(0)')         // Get Step 1
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                          
+
+    $('.accordion-panel:eq(1)')         // Get Step 2
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                          
+    
+    $('.accordion-panel:eq(2)')         // Get Step 3
+    .delay(500);                        // Delay Animation
+    $('.accordion-panel:eq(2)')         // Get Step 3
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideDown(1000);                       
+
+    $('.accordion-panel:eq(3)')         // Get Step 4
+    .not(':animated')                   // If it is not currently animating                                   
+    .slideUp();                         
+});
+
+// #Payment (MISSING)
+$('.menu').on('click', '#orderYes', function(){                     
+  $('.accordion-panel:eq(0)')         // Get Step 1
+  .not(':animated')                   // If it is not currently animating                                   
+  .slideUp();                          
+
+  $('.accordion-panel:eq(1)')         // Get Step 2
+  .not(':animated')                   // If it is not currently animating                                   
+  .slideUp();                          
+  
+  $('.accordion-panel:eq(2)')         // Get Step 3
+  .not(':animated')                   // If it is not currently animating                                   
+  .slideUp();                       
+
+  $('.accordion-panel:eq(3)')         // Get Step 4
+  .delay(500);                        // Delay Animation
+  $('.accordion-panel:eq(3)')         // Get Step 4
+  .not(':animated')                   // If it is not currently animating                                   
+  .slideDown(1000);                         
+});
+
+
 
 
 
@@ -191,8 +193,8 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                         
                         newContent += '<button class="booths" id="booth' + i + '">';
                         newContent += '<h1 class="booths-H1" id="boothH1-' + i + '">' + cabins.Description + '<h1>';
-                        newContent += '<h3 class="booths-H3" id="boothH3-' + i + '">' +
-                        '<h3>'; //If true set color red - if false set color green (Style this part with image or better text than true/false)
+                        newContent += '<h3 class="booths-H3" id="boothH3-' + i + '">' + cabins.InfoText +
+                        '</h3>'; //If true set color red - if false set color green (Style this part with image or better text than true/false)
                         newContent += '<p class="booths-P" id="boothP-' + i + '">' + cabins.Price + ' DKK/min - max tid er ' + cabins.MaxRunTime + 'min.' + '</p>';
                         newContent += '</button>';                       
                     }
@@ -202,6 +204,7 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                  
                     // Update the page with the new content
                     document.getElementById('content1').innerHTML = newContent;
+                    $("#booth0").attr("class", "booths active"); // sets an active booth
                     
                     // DISABLE INUSE CABIN
                     for (var i = 0; i < cabinsTotal; i++) {
@@ -209,24 +212,25 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                         console.log("Cabin " + [i + 1] + " is disabled is " + cabins.IsDisabled);
                         if (cabins.IsDisabled === true) {
                             document.getElementById('booth' + i).setAttribute('disabled', 'disabled');
-                            document.getElementById('boothH3-' + i).innerHTML = "Optaget: " + cabins.RunTime + "/" + cabins.EndTime + " min";
+                            document.getElementById('boothH1-' + i).innerHTML += " OPTAGET";
+                            document.getElementById('boothH3-' + i).innerHTML = cabins.RunTime + "/" + cabins.EndTime + " min";
                             document.getElementById('boothP-' + i).innerHTML = "";
-                            document.getElementById('booth' + i).style.backgroundColor = "#" + (107).toString(16) + (107).toString(16) + (107).toString(16);
+                            document.getElementById('booth' + i).style.backgroundColor = "#" + (50).toString(16) + (50).toString(16) + (50).toString(16);
                             document.getElementById('booth' + i).style.cursor = "not-allowed";
                         }
                     }
 
 
                     // DISABLE BETALING BUTTON
-                    document.getElementById('menuPay').setAttribute('disabled', 'disabled');
-                    document.getElementById('menuPay').style.backgroundColor = "#" + (107).toString(16) + (107).toString(16) + (107).toString(16);
-                    document.getElementById('menuPay').style.border = "none";
-                    document.getElementById('menuPay').style.cursor = "not-allowed";
+                    document.getElementById('confirmOrder').setAttribute('disabled', 'disabled');
+                    document.getElementById('confirmOrder').style.backgroundColor = "#" + (107).toString(16) + (107).toString(16) + (107).toString(16);
+                    document.getElementById('confirmOrder').style.border = "none";
+                    document.getElementById('confirmOrder').style.cursor = "not-allowed";
 
-                    document.getElementById('menuPay2').setAttribute('disabled', 'disabled');
-                    document.getElementById('menuPay2').style.backgroundColor = "#" + (107).toString(16) + (107).toString(16) + (107).toString(16);
-                    document.getElementById('menuPay2').style.border = "none";
-                    document.getElementById('menuPay2').style.cursor = "not-allowed";
+                    document.getElementById('confirmOrder2').setAttribute('disabled', 'disabled');
+                    document.getElementById('confirmOrder2').style.backgroundColor = "#" + (107).toString(16) + (107).toString(16) + (107).toString(16);
+                    document.getElementById('confirmOrder2').style.border = "none";
+                    document.getElementById('confirmOrder2').style.cursor = "not-allowed";
                     
                     $("#totalPrisId").css("background-color", "rgb(107, 107, 107)");
                     $("#totalPris2Id").css("background-color", "rgb(107, 107, 107)"); 
@@ -282,15 +286,15 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                             var maxRunTime = data.Booths[idKabine].MaxRunTime;
 
                             // DISABLE BETALING BUTTON IN CASE USER CHANGES OPINION
-                            document.getElementById('menuPay').setAttribute('disabled', 'disabled');
-                            document.getElementById('menuPay').style.backgroundColor = "#" + (107).toString(16) + (107).toString(16) + (107).toString(16);
-                            document.getElementById('menuPay').style.border = "none";
-                            document.getElementById('menuPay').style.cursor = "not-allowed";
+                            document.getElementById('confirmOrder').setAttribute('disabled', 'disabled');
+                            document.getElementById('confirmOrder').style.backgroundColor = "#" + (107).toString(16) + (107).toString(16) + (107).toString(16);
+                            document.getElementById('confirmOrder').style.border = "none";
+                            document.getElementById('confirmOrder').style.cursor = "not-allowed";
 
-                            document.getElementById('menuPay2').setAttribute('disabled', 'disabled');
-                            document.getElementById('menuPay2').style.backgroundColor = "#" + (107).toString(16) + (107).toString(16) + (107).toString(16);
-                            document.getElementById('menuPay2').style.border = "none";
-                            document.getElementById('menuPay2').style.cursor = "not-allowed";
+                            document.getElementById('confirmOrder2').setAttribute('disabled', 'disabled');
+                            document.getElementById('confirmOrder2').style.backgroundColor = "#" + (107).toString(16) + (107).toString(16) + (107).toString(16);
+                            document.getElementById('confirmOrder2').style.border = "none";
+                            document.getElementById('confirmOrder2').style.cursor = "not-allowed";
                             
 
                             $("#totalPrisId").css("background-color", "rgb(107, 107, 107)");
@@ -387,16 +391,17 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
                                      */
                                     
                                     // ENABLE BETALING BUTTON
-                                    document.getElementById('menuPay').removeAttribute('disabled');
-                                    document.getElementById('menuPay').style.backgroundColor = "#" + (221).toString(16) + (221).toString(16) + (221).toString(16);
-                                    document.getElementById('menuPay').style.border = "";
-                                    document.getElementById('menuPay').style.cursor = "pointer";
+                                    document.getElementById('confirmOrder').removeAttribute('disabled');
+                                    document.getElementById('confirmOrder').style.backgroundColor = "#" + (221).toString(16) + (221).toString(16) + (221).toString(16);
+                                    document.getElementById('confirmOrder').style.border = "";
+                                    document.getElementById('confirmOrder').style.cursor = "pointer";
 
-                                    document.getElementById('menuPay2').removeAttribute('disabled');
-                                    document.getElementById('menuPay2').style.backgroundColor = "#" + (221).toString(16) + (221).toString(16) + (221).toString(16);
-                                    document.getElementById('menuPay2').style.border = "";
-                                    document.getElementById('menuPay2').style.cursor = "pointer";
-
+                                    document.getElementById('confirmOrder2').removeAttribute('disabled');
+                                    document.getElementById('confirmOrder2').style.backgroundColor = "#" + (221).toString(16) + (221).toString(16) + (221).toString(16);
+                                    document.getElementById('confirmOrder2').style.border = "";
+                                    document.getElementById('confirmOrder2').style.cursor = "pointer";
+                                    
+                                    $("#totalPrisId, #totalPris2Id").css("color", "white");
                                     $("#totalPrisId").css("background-color", "green");
                                     $("#totalPris2Id").css("background-color", "green"); 
                                     
