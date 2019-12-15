@@ -439,10 +439,10 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
       $('.accordion:eq(0)')         // Get All code from accordion class
       .not(':animated')             // If it is not currently animating                                   
       .hide();                       
-      document.getElementById("errorMessage").innerHTML = "<center><h1>Der er sket en fejl, prøv igen!</h1><br><br><h3>Er det anden gang du ser denne besked,<br>kontakt da venligst support på nummer: <b>70 70 40 40</b></h3></h1></center><br><p>Error message: " + error + "</p>"; 
+      document.getElementById("errorMessage").innerHTML = "<center><h1>Der er sket en fejl, prøv igen!</h1><br><br><h3>Er det anden gang du ser denne besked,<br>kontakt da venligst support på nummer: <b>28 44 18 29</b></h3></h1></center><br><p>Error message: " + error + "</p>"; 
       
       (function(){
-          var idleSeconds = 15;
+          var idleSeconds = 5;
           var idleTimer;
           function resetTimer(){
             clearTimeout(idleTimer);
@@ -497,7 +497,7 @@ function loadCreditcard() {
   creditCardContent2 += '</h2></center><br><br>'
   
 
-  var idleSeconds = 10;
+  var idleSeconds = 5;
   setTimeout(loadCreditcardContent,idleSeconds*1000);
   
   function loadCreditcardContent(){
@@ -520,7 +520,7 @@ function loadCreditcard() {
         document.getElementById('loadSpinner').style.display = "none";
         document.getElementById('creditCardContent1').innerHTML = creditCardContent2;
       
-      idleSeconds = 2
+      idleSeconds = 3
       setTimeout(softReset,idleSeconds*1000);
       
       function softReset(){
@@ -584,7 +584,7 @@ function loadQrCode() {
   
   function loadCreditcardContent(){
 
-    var coinflip = 1//Math.floor(Math.random() * 2);
+    var coinflip = 0//Math.floor(Math.random() * 2);
 
     console.log("0 = Betaling Lykkedes, 1 = Betaling Mislykkedes Resultat: " + coinflip);
 
@@ -602,7 +602,7 @@ function loadQrCode() {
         document.getElementById('loadSpinner').style.display = "none";
         document.getElementById('creditCardContent1').innerHTML = creditCardContent2;
       
-      idleSeconds = 2
+      idleSeconds = 3
       setTimeout(softReset,idleSeconds*1000);
       
       function softReset(){
@@ -662,12 +662,12 @@ function loadMobilePay() {
   creditCardContent2 += '</h2></center><br><br>'
   
 
-  var idleSeconds = 10;
+  var idleSeconds = 5;
   setTimeout(loadCreditcardContent,idleSeconds*1000);
   
   function loadCreditcardContent(){
 
-    var coinflip = 0//Math.floor(Math.random() * 2);
+    var coinflip = 1//Math.floor(Math.random() * 2);
 
     console.log("0 = Betaling Lykkedes, 1 = Betaling Mislykkedes Resultat: " + coinflip);
 
@@ -685,7 +685,7 @@ function loadMobilePay() {
         document.getElementById('loadSpinner').style.display = "none";
         document.getElementById('creditCardContent1').innerHTML = creditCardContent2;
       
-      idleSeconds = 2
+      idleSeconds = 3
       setTimeout(softReset,idleSeconds*1000);
       
       function softReset(){
