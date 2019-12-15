@@ -30,15 +30,16 @@ h1 {
     top: 80%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 15px 32px;
+    padding: 25px 100px;
 
     color: white;
     
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
     cursor: pointer;
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     
 }
 
@@ -92,7 +93,7 @@ h1 {
   
   @media (max-width: 767px) {
     .fullscreen-bg {
-      background: url('/media/start_bg.png') center center / cover no-repeat;
+      background: url('/media/start_bg2.png') center center / cover no-repeat;
     }
   
     .fullscreen-bg__video {

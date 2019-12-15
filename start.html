@@ -6,18 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/start.css">
+    <link rel="stylesheet" href="/css/modal-window.css" />
     <title>Start</title>
 </head>
 
 <body>
 
     <div class="fullscreen-bg">
-        <video loop muted autoplay poster="/media/start_bg.png" class="fullscreen-bg__video">
-            <source src="/media/start_bg.webm" type="video/webm">
+        <video loop muted autoplay poster="/media/start_bg2.png" class="fullscreen-bg__video">
+            <source src="/media/start_bg2.webm" type="video/webm">
         </video>
     </div>
 
-    <div class="btn-help" onclick="loadHelp()">HJÆLP!</div>
+    <div class="btn-help" id="help"><b><h2>HJÆLP!</h2></b></div>
 
     <div id="bodyBox" onclick="loadMenu()">
         <!--<h1>TRYK FOR AT KOMME IGANG</h1>-->
@@ -27,7 +28,21 @@
 
     </div>
 
+    <div id="helpOptions">
+        <h2>BRUG FOR KUNDESERVICE</h2>
+        <h3>Tlf: +45 70 70 40 40  |  E-mail: kundeservice@pay4it.dk</h3>
+        <br>
+        <h2>BRUG FOR TEKNISK HJÆLP</h2>
+        <h3>Tlf: +45 26 81 55 00  |  E-mail: kontakt@pay4it.dk</h3>
+        <br>
+        <!--<iframe width="768" height="432" src="https://www.youtube-nocookie.com/embed/cn4M-fH08XY?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" fs="0" controls="0"></iframe>-->
+        
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="/js/start.js"></script>
+    <script src="/help-window.js"></script>
+    <script src="/help-init.js"></script>
 
 </body>
 
