@@ -27,11 +27,11 @@ attachEvent(window,'load',function(){
 
 // STEPS ANIMATION (NOT COMPLETE)
 $('.accordion-panel:eq(0)')
-.slideDown(0);
+.fadeIn(0);
 $('.accordion-panel:eq(0)')
-.slideUp(500); 
+.fadeOut(500); 
 $('.accordion-panel:eq(0)')
-.slideDown(); 
+.fadeIn(); 
 $('.grid-container:eq(0)').hide().fadeIn(3000);
 /*$
 $('.accordion').on('click', '.accordion-control', function (e) { // When clicked
@@ -48,103 +48,103 @@ $('.menu').on('click','#kabineTid, #orderNo', function(){
     .delay(500);                        // Delay Animation
     $('.accordion-panel:eq(0)')         // Get Step 1
     .not(':animated')                   // If it is not currently animating                                   
-    .slideDown(1000);                          
+    .fadeIn(1000);                          
 
     $('.accordion-panel:eq(1)')         // Get Step 2
     .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                          
+    .fadeOut();                          
         
     $('.accordion-panel:eq(2)')         // Get Step 3
     .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                       
+    .fadeOut();                       
 
     $('.accordion-panel:eq(3)')         // Get Step 4
     .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                         
+    .fadeOut();                         
 });
 
 // #vare KNAP (COMPLETE)
 $('.menu').on('click', '#vare', function(){                     
     $('.accordion-panel:eq(0)')         // Get Step 1
     .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                          
+    .fadeOut();                          
 
     $('.accordion-panel:eq(1)')         // Get Step 2
     .delay(500);                        // Delay Animation
     $('.accordion-panel:eq(1)')         // Get Step 2
     .not(':animated')                   // If it is not currently animating                                   
-    .slideDown(1000);                          
+    .fadeIn(1000);                          
 
     $('.accordion-panel:eq(2)')         // Get Step 3
     .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                          
+    .fadeOut();                          
     
     $('.accordion-panel:eq(3)')         // Get Step 4
     .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                        
+    .fadeOut();                        
 });
 
 // #confirmOrder (COMPLETE)
 $('.menu').on('click', '#confirmOrder', function(){                     
     $('.accordion-panel:eq(0)')         // Get Step 1
     .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                          
+    .fadeOut();                          
 
     $('.accordion-panel:eq(1)')         // Get Step 2
     .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                          
+    .fadeOut();                          
 
     $('.accordion-panel:eq(2)')         // Get Step 3
     .delay(500);                        // Delay Animation
     $('.accordion-panel:eq(2)')         // Get Step 3
     .not(':animated')                   // If it is not currently animating                                   
-    .slideDown(1000);                       
+    .fadeIn(1000);                       
 
     $('.accordion-panel:eq(3)')         // Get Step 4
     .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                         
+    .fadeOut();                         
 });
 
 // #confirmOrder2 (COMPLETE)
 $('.menu').on('click', '#confirmOrder2', function(){                     
     $('.accordion-panel:eq(0)')         // Get Step 1
     .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                          
+    .fadeOut();                          
 
     $('.accordion-panel:eq(1)')         // Get Step 2
     .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                          
+    .fadeOut();                          
     
     $('.accordion-panel:eq(2)')         // Get Step 3
     .delay(500);                        // Delay Animation
     $('.accordion-panel:eq(2)')         // Get Step 3
     .not(':animated')                   // If it is not currently animating                                   
-    .slideDown(1000);                       
+    .fadeIn(1000);                       
 
     $('.accordion-panel:eq(3)')         // Get Step 4
     .not(':animated')                   // If it is not currently animating                                   
-    .slideUp();                         
+    .fadeOut();                         
 });
 
 // #payment (COMPLETE)
 $('.menu').on('click', '#orderYes', function(){                     
   $('.accordion-panel:eq(0)')         // Get Step 1
   .not(':animated')                   // If it is not currently animating                                   
-  .slideUp();                          
+  .fadeOut();                          
 
   $('.accordion-panel:eq(1)')         // Get Step 2
   .not(':animated')                   // If it is not currently animating                                   
-  .slideUp();                          
+  .fadeOut();                          
   
   $('.accordion-panel:eq(2)')         // Get Step 3
   .not(':animated')                   // If it is not currently animating                                   
-  .slideUp();                       
+  .fadeOut();                       
 
   $('.accordion-panel:eq(3)')         // Get Step 4
   .delay(500);                        // Delay Animation
   $('.accordion-panel:eq(3)')         // Get Step 4
   .not(':animated')                   // If it is not currently animating                                   
-  .slideDown(1000);                         
+  .fadeIn(1000);                         
 });
 
 // #confirmPayment
@@ -154,25 +154,25 @@ $('.payment').on('click','#creditcard, #qrCode, #mobilePay',function(){
 
   $('.accordion-panel:eq(0)')         // Get Step 1
   .not(':animated')                   // If it is not currently animating                                   
-  .slideUp();                          
+  .fadeOut();                          
 
   $('.accordion-panel:eq(1)')         // Get Step 2
   .not(':animated')                   // If it is not currently animating                                   
-  .slideUp();                          
+  .fadeOut();                          
   
   $('.accordion-panel:eq(2)')         // Get Step 3
   .not(':animated')                   // If it is not currently animating                                   
-  .slideUp();                       
+  .fadeOut();                       
 
   $('.accordion-panel:eq(3)')         // Get Step 4
   .not(':animated')                   // If it is not currently animating                                   
-  .slideUp();
+  .fadeOut();
 
   $('.accordion-panel:eq(4)')         // Get Step 4
   .delay(500);                        // Delay Animation
   $('.accordion-panel:eq(4)')         // Get Step 5
   .not(':animated')                   // If it is not currently animating                                   
-  .slideDown(1000);     
+  .fadeIn(1000);     
 });
 
 
@@ -218,9 +218,10 @@ fetch('https://consolwebapi.pay4it.dk/api/Devices/Detail?deviceID=560', {
           
           newContent += '<button class="booths" id="booth' + i + '">';
           newContent += '<h1 class="booths-H1" id="boothH1-' + i + '">' + cabins.Description + '<h1>';
+          newContent += '<p class="booths-P" id="boothP-' + i + '">' + cabins.Price + ' DKK/min - Max ' + cabins.MaxRunTime + 'min.' + '</p><br>';
           newContent += '<h3 class="booths-H3" id="boothH3-' + i + '">' + cabins.InfoText +
           '</h3>'; //If true set color red - if false set color green (Style this part with image or better text than true/false)
-          newContent += '<p class="booths-P" id="boothP-' + i + '">' + cabins.Price + ' DKK/min - max tid er ' + cabins.MaxRunTime + 'min.' + '</p>';
+          
           newContent += '</button>';                       
       }
 
@@ -525,21 +526,21 @@ function loadCreditcard() {
       function softReset(){
           $('.accordion-panel:eq(0)')         // Get Step 1
           .not(':animated')                   // If it is not currently animating                                   
-          .slideUp();                          
+          .fadeOut();                          
 
           $('.accordion-panel:eq(1)')         // Get Step 2
           .not(':animated')                   // If it is not currently animating                                   
-          .slideUp();                          
+          .fadeOut();                          
           
           $('.accordion-panel:eq(2)')         // Get Step 3
           .not(':animated')                   // If it is not currently animating                                   
-          .slideUp();                       
+          .fadeOut();                       
 
           $('.accordion-panel:eq(3)')         // Get Step 4
           .delay(500);                        // Delay Animation
           $('.accordion-panel:eq(3)')         // Get Step 4
           .not(':animated')                   // If it is not currently animating                                   
-          .slideDown(1000);
+          .fadeIn(1000);
           
           idleSeconds = 1
           setTimeout(contentReset,idleSeconds*1000);
@@ -607,21 +608,21 @@ function loadQrCode() {
       function softReset(){
           $('.accordion-panel:eq(0)')         // Get Step 1
           .not(':animated')                   // If it is not currently animating                                   
-          .slideUp();                          
+          .fadeOut();                          
 
           $('.accordion-panel:eq(1)')         // Get Step 2
           .not(':animated')                   // If it is not currently animating                                   
-          .slideUp();                          
+          .fadeOut();                          
           
           $('.accordion-panel:eq(2)')         // Get Step 3
           .not(':animated')                   // If it is not currently animating                                   
-          .slideUp();                       
+          .fadeOut();                       
 
           $('.accordion-panel:eq(3)')         // Get Step 4
           .delay(500);                        // Delay Animation
           $('.accordion-panel:eq(3)')         // Get Step 4
           .not(':animated')                   // If it is not currently animating                                   
-          .slideDown(1000);
+          .fadeIn(1000);
           
           idleSeconds = 1
           setTimeout(contentReset,idleSeconds*1000);
@@ -690,21 +691,21 @@ function loadMobilePay() {
       function softReset(){
           $('.accordion-panel:eq(0)')         // Get Step 1
           .not(':animated')                   // If it is not currently animating                                   
-          .slideUp();                          
+          .fadeOut();                          
 
           $('.accordion-panel:eq(1)')         // Get Step 2
           .not(':animated')                   // If it is not currently animating                                   
-          .slideUp();                          
+          .fadeOut();                          
           
           $('.accordion-panel:eq(2)')         // Get Step 3
           .not(':animated')                   // If it is not currently animating                                   
-          .slideUp();                       
+          .fadeOut();                       
 
           $('.accordion-panel:eq(3)')         // Get Step 4
           .delay(500);                        // Delay Animation
           $('.accordion-panel:eq(3)')         // Get Step 4
           .not(':animated')                   // If it is not currently animating                                   
-          .slideDown(1000);
+          .fadeIn(1000);
           
           idleSeconds = 1
           setTimeout(contentReset,idleSeconds*1000);
